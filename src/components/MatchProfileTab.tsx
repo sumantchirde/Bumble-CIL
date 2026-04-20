@@ -122,13 +122,21 @@ function SHAPTopDrivers() {
   );
 }
 
-export default function MatchProfileTab({ profile }: MatchProfileTabProps) {
+export default function MatchProfileTab({ profile, initiator }: MatchProfileTabProps) {
   const score = profile.cil_score ?? 0;
+  const [isMsgOpen, setIsMsgOpen] = useState(false);
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 items-start max-w-5xl mx-auto">
-      <div className="w-full lg:w-auto lg:flex-shrink-0 lg:max-w-sm">
+      <div className="w-full lg:w-auto lg:flex-shrink-0 lg:max-w-sm space-y-3">
         <ProfileCard profile={profile} isInitiator={false} />
+        <button
+          onClick={() => setIsMsgOpen(true)}
+          className="w-full flex items-center justify-center gap-2 bg-bumble-gold hover:brightness-95 text-bumble-dark font-black text-sm py-3.5 rounded-2xl shadow-md transition-all active:scale-[0.98]"
+        >
+          <Sparkles className="w-4 h-4" />
+          Suggest First Message
+        </button>
       </div>
 
       <div className="w-full lg:flex-1 space-y-3">
@@ -137,6 +145,13 @@ export default function MatchProfileTab({ profile }: MatchProfileTabProps) {
         <EngineeredSignals profile={profile} />
         <SHAPTopDrivers />
       </div>
+
+      <FirstMessageModal
+        isOpen={isMsgOpen}
+        onClose={() => setIsMsgOpen(false)}
+        candidate={profile}
+        initiator={initiator}
+      />
     </div>
   );
 }
