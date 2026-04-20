@@ -51,7 +51,7 @@ export default function FirstMessageModal({
             initiator: {
               name: initiator.name,
               age: initiator.age,
-              interests: (initiator as InitiatorProfile & { interests?: string[] }).interests ?? [],
+              interests: initiator.interests,
             },
             candidate: {
               name: candidate.name,
