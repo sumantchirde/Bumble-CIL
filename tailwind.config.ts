@@ -13,7 +13,13 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Nunito', 'system-ui', 'sans-serif'],
+      },
       colors: {
+        'bumble-gold': '#FFC629',
+        'bumble-dark': '#2D2D2D',
+        'bumble-light': '#FFF3C4',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
