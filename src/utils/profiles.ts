@@ -5,6 +5,7 @@ export interface InitiatorProfile {
   name: string;
   age: number;
   photo: string;
+  interests: string[];
   features: InitiatorFeatures;
 }
 
@@ -14,6 +15,7 @@ export const INITIATORS: InitiatorProfile[] = [
     name: 'Sarah',
     age: 28,
     photo: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600',
+    interests: ['Outdoors', 'Travel', 'Music', 'Food & Drink', 'Yoga'],
     features: {
       init_days_on_platform: 245,
       init_prior_conv_rate: 0.36,
@@ -28,6 +30,7 @@ export const INITIATORS: InitiatorProfile[] = [
     name: 'Jessica',
     age: 26,
     photo: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600',
+    interests: ['Music', 'Gaming', 'Books', 'Art'],
     features: {
       init_days_on_platform: 120,
       init_prior_conv_rate: 0.28,
@@ -42,6 +45,7 @@ export const INITIATORS: InitiatorProfile[] = [
     name: 'Emma',
     age: 31,
     photo: 'https://images.pexels.com/photos/1181694/pexels-photo-1181694.jpeg?auto=compress&cs=tinysrgb&w=600',
+    interests: ['Travel', 'Fitness', 'Food & Drink', 'Sports'],
     features: {
       init_days_on_platform: 450,
       init_prior_conv_rate: 0.52,
@@ -56,6 +60,7 @@ export const INITIATORS: InitiatorProfile[] = [
     name: 'Amanda',
     age: 29,
     photo: 'https://images.pexels.com/photos/1270293/pexels-photo-1270293.jpeg?auto=compress&cs=tinysrgb&w=600',
+    interests: ['Books', 'Art', 'Outdoors'],
     features: {
       init_days_on_platform: 180,
       init_prior_conv_rate: 0.18,
@@ -70,6 +75,7 @@ export const INITIATORS: InitiatorProfile[] = [
     name: 'Rachel',
     age: 27,
     photo: 'https://images.pexels.com/photos/1181712/pexels-photo-1181712.jpeg?auto=compress&cs=tinysrgb&w=600',
+    interests: ['Music', 'Travel', 'Food & Drink', 'Fitness'],
     features: {
       init_days_on_platform: 320,
       init_prior_conv_rate: 0.44,
