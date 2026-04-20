@@ -35,11 +35,9 @@ export default function FirstMessageModal({
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   // Compute shared interests by case-insensitive overlap
-  const sharedInterests = (initiator as InitiatorProfile & { interests?: string[] }).interests
-    ? (initiator as InitiatorProfile & { interests?: string[] }).interests!.filter((i) =>
-        candidate.interests.some((ci) => ci.toLowerCase() === i.toLowerCase())
-      )
-    : [];
+  const sharedInterests = initiator.interests.filter((i) =>
+    candidate.interests.some((ci) => ci.toLowerCase() === i.toLowerCase())
+  );
 
   const fetchSuggestions = async () => {
     setLoading(true);
