@@ -1,9 +1,14 @@
+import { useState } from 'react';
+import { Sparkles } from 'lucide-react';
 import { Profile } from '../types';
 import { computeEngineeredFeatures, FEATURE_IMPORTANCES } from '../utils/cilModel';
 import ProfileCard from './ProfileCard';
+import FirstMessageModal from './FirstMessageModal';
+import { InitiatorProfile } from '../utils/profiles';
 
 interface MatchProfileTabProps {
   profile: Profile;
+  initiator: InitiatorProfile;
 }
 
 function CILGauge({ score }: { score: number }) {
